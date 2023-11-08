@@ -133,7 +133,7 @@ dependencies {
 	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.15.0'
 	//	ADempiere Core
 	implementation "${baseGroupId}:base:${baseVersion}"
-	implementation "${baseGroupId}:adempiere-grpc-utils:1.1.2"
+	implementation "io.github.adempiere:adempiere-grpc-utils:1.1.2"
 	implementation "${baseGroupId}:adempiere-business-processors:adempiere-3.9.4-abp-1.0.4"
 	// Localization El Salvador (LSV)
 	implementation "${baseGroupId}:location-el-salvador:adempiere-3.9.4-LSV-1.0.16"
