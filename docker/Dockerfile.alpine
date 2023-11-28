@@ -22,7 +22,7 @@ COPY docker/start.sh /opt/apps/server/start.sh
 EXPOSE ${SERVER_PORT}
 
 # timezone
-ENV TZ America/Caracas
+ENV TZ America/El_Salvador
 
 # Add operative system dependencies
 RUN	rm -rf /var/cache/apk/* && \
