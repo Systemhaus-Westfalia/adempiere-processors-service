@@ -136,7 +136,7 @@ dependencies {
 	implementation "io.github.adempiere:adempiere-grpc-utils:1.1.2"
 	implementation "${baseGroupId}:adempiere-business-processors:adempiere-3.9.4-abp-1.0.4"
 	// Localization El Salvador (LSV)
-	implementation "${baseGroupId}:location-el-salvador:adempiere-3.9.4-LSV-1.0.24"
+	implementation "${baseGroupId}:location-el-salvador:adempiere-3.9.4-LSV-1.0.25"
 	
 	//	Others
     compileOnly 'org.apache.tomcat:annotations-api:6.0.53'
