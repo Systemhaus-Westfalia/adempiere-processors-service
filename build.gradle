@@ -32,7 +32,7 @@ repositories {
     mavenCentral()
     mavenLocal()
     maven {
-    	url = System.getenv("GITHUB_DEPLOY_REPOSITORY") ?: System.properties['deploy.repository'] ?: 'https://maven.pkg.github.com'
+    	url = "https://maven.pkg.github.com/Systemhaus-Westfalia/shw-customizations"
         credentials {
         	username = System.getenv("GITHUB_DEPLOY_USER") ?: System.properties['deploy.user']
             password = System.getenv("GITHUB_DEPLOY_TOKEN") ?: System.properties['deploy.token'] 
@@ -132,9 +132,7 @@ dependencies {
 	//implementation 'javax.activation:activation:1.1.1'
 	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.15.0'
 	//	ADempiere Core
-	implementation "${baseGroupId}:base:${baseVersion}"
-	implementation "${baseGroupId}:adempiere-grpc-utils:1.3.6"
-	implementation "${baseGroupId}:adempiere-business-processors:1.1.0"
+	implementation 'org.shw:shw-customizations.shw_libs:1.0.1'
 	//	Others
     compileOnly 'org.apache.tomcat:annotations-api:6.0.53'
 }
