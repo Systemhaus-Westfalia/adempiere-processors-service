@@ -31,6 +31,13 @@ jar {
 repositories {
     mavenCentral()
     mavenLocal()
+	maven {
+    	url = "https://maven.pkg.github.com/Systemhaus-Westfalia/LSV"
+        credentials {
+        	username = findProperty("deployUsername") ?: System.properties['deploy.user']
+            password = findProperty("deployToken") ?: System.properties['deploy.token'] 
+		}
+	}
     maven {
     	url = System.getenv("GITHUB_DEPLOY_REPOSITORY") ?: System.properties['deploy.repository'] ?: 'https://maven.pkg.github.com'
         credentials {
@@ -142,4 +149,5 @@ dependencies {
 	//	Others
     compileOnly 'org.apache.tomcat:annotations-api:6.0.53'
 }
+
 
