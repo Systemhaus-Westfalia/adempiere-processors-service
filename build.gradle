@@ -144,10 +144,13 @@ dependencies {
 	implementation "${baseGroupId}:adempiere-business-processors:adempiere-3.9.4-abp-1.0.4"
 	// Localization El Salvador (LSV)
 	//implementation "${baseGroupId}:location-el-salvador:adempiere-3.9.4-LSV-1.0.29"
+
+	//Auf LSV 1.0.3 Systemhaus Westfalia
 	implementation "com.shw:lsv-saprod:lsv-saprod-1.0.3"
 	
 	//	Others
     compileOnly 'org.apache.tomcat:annotations-api:6.0.53'
 }
+
 
 
