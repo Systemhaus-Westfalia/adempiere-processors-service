@@ -11,6 +11,8 @@ def grpcVersion = '1.53.0'
 def baseVersion = 'shw-air-terminal-vertical-1.0.57'
 def baseGroupId = 'com.erpya'
 def privateDependencyBaseVersion = "adempiere-3.9.4"
+def descriptorFile = "adempiere-processors-service.dsc"
+
 startScripts.enabled = false
 
 ext {
@@ -65,9 +67,8 @@ protobuf {
 			  // See --descriptor_set_out in protoc documentation about what it is.
 			  task.generateDescriptorSet = true
 			
-			  // Allows to override the default for the descriptor set location
-			  task.descriptorSetOptions.path =
-			    "${projectDir}/build/descriptors/adempiere-processors-service-service.pb"
+			// Allows to override the default for the descriptor set location
+			task.descriptorSetOptions.path = "${projectDir}/build/descriptors/${descriptorFile}"
 			
 			  // If true, the descriptor set will contain line number information
 			  // and comments. Default is false.
@@ -88,6 +89,22 @@ sourceSets {
         }
     }
 }
+
+// Copy proto descriptor another folder
+allprojects {
+	task copyDescriptor(type: Copy) {
+		from "${projectDir}/build/descriptors/${descriptorFile}"
+		into "${projectDir}/docker-compose/envoy/definitions"
+		// rename { "${descriptorFile}" }
+	}
+
+	tasks.matching {
+		it.name.startsWith('compileJava')
+	}.each { task ->
+		task.finalizedBy copyDescriptor
+	}
+}
+
 task AdempiereProcessorServer(type: CreateStartScripts) {
 	mainClass = javaMainClass
     applicationName = 'adempiere-processors-service-server'
