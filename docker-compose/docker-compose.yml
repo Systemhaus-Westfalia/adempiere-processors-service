@@ -75,7 +75,7 @@ services:
       container_name: ${ENVOY_NAME}
       volumes:
           - ./envoy/envoy.yaml:/etc/envoy/envoy.yaml:ro
-          - ./envoy/definitions/adempiere-processors-service-service.pb:/data/adempiere-processors-service-service.pb:ro
+          - ./envoy/definitions/adempiere-processors-service.dsc:/data/adempiere-processors-service.dsc:ro
       depends_on:
         - adempiere.processor
       ports:
