@@ -183,7 +183,7 @@ dependencies {
 
 	//Auf LSV 1.0.3 Systemhaus Westfalia
 	implementation "com.shw:lsv-saprod:lsv-saprod-1.0.6"
-    implementation 'com.shw:adempiere-shw.shw_libs:3.9.4.001-1.1.43'
+    implementation 'com.shw:adempiere-shw.shw_libs:3.9.4.001-1.1.42'
 
 	//	Others
     compileOnly 'org.apache.tomcat:annotations-api:6.0.53'
